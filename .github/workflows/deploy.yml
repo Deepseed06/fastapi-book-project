@@ -33,7 +33,7 @@ jobs:
     name: Deploy to Server
     runs-on: ubuntu-latest
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'  # Changed condition
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -51,5 +51,5 @@ jobs:
             git pull origin main
             source venv/bin/activate
             pip install -r requirements.txt
-            systemctl restart fastapi-book-project
+            sudo systemctl restart fastapi-book-project
           EOF
