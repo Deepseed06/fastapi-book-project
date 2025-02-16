@@ -49,3 +49,4 @@ jobs:
             pip install -r requirements.txt
             systemctl restart fastapi
           EOF
+
