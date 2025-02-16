@@ -2,8 +2,9 @@ name: Test and Deploy FastAPI App
 
 on:
   pull_request:
-    branches:
-      - main  # Runs on PRs targeting the main branch
+    branches: [ main ]
+  push:
+    branches: [ main ]  # Runs on PRs targeting the main branch
 
 jobs:
   test:
