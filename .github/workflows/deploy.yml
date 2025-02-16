@@ -43,9 +43,9 @@ jobs:
           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
         run: |
           sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@54.245.237.108 <<EOF
-            cd /home/emeka/fastapi-app  # Adjust this path
+            cd /home/emeka/fastapi-book-project
             git pull origin main
             source venv/bin/activate
             pip install -r requirements.txt
-            systemctl restart fastapi
+            systemctl restart fastapi-book-project
           EOF
